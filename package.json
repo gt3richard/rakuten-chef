@@ -1,0 +1,23 @@
+{
+  "name": "rakuten-chef",
+  "version": "1.0.0",
+  "description": "Scapes the Rakuten menu site",
+  "main": "chef.js",
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gt3richard/rakuten-chef.git"
+  },
+  "author": "Richard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gt3richard/rakuten-chef/issues"
+  },
+  "homepage": "https://github.com/gt3richard/rakuten-chef#readme"
+}
