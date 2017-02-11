@@ -14,8 +14,8 @@ app.post('/', function(request, response) {
 	
 	console.log(request.body);
 	
-	var date = request.body.date;
-	var meal = request.body.meal;
+	var date = request.body.result.parameters.date;
+	var meal = request.body.result.parameters.meal;
 	
 	var payload = [
 	{date:'2-13-2017',menu:{breakfast:['eggs','bacon'],lunch:['sushi']}},
@@ -32,7 +32,15 @@ app.post('/', function(request, response) {
 			value = {message:'We are having '+ payload[0].menu.lunch[0] +' today.'};
 	}
 	
-	response.send(value);
+	var apiResponse = {
+		speech: value,
+		displayText: value,
+		data: {},
+		contextOut: [],
+		source: 'rakuten-chef'
+	};
+	
+	response.send(apiResponse);
 });
 
 
