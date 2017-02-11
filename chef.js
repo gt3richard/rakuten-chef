@@ -23,13 +23,13 @@ app.post('/', function(request, response) {
 	{date:'2-15-2017',menu:{breakfast:['bagels','yogurt'],lunch:['pizza']}}
 	];
 	
-	var value = {message:'We are having Soylent, sorry.'};
+	var value = "We are having Soylent, sorry.";
 	if(date == 'today')
 	{
 		if(meal == 'breakfast')
-			value = {message:'We are having '+ payload[0].menu.breakfast[0] +' today.'};
+			value = "We are having "+ payload[0].menu.breakfast[0] +" today.";
 		else if(meal == 'lunch')
-			value = {message:'We are having '+ payload[0].menu.lunch[0] +' today.'};
+			value = "We are having "+ payload[0].menu.lunch[0] +" today.";
 	}
 	
 	var apiResponse = {
