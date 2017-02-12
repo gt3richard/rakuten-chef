@@ -18,7 +18,8 @@ function NormalizeDay(date)
 	else if(date == 'tomorrow')
 	{
 		var currDay = new Date();
-		day = currDay.setDate(currDay.getDate() + 1).getDay();
+		currDay.setDate(currDay.getDate() + 1);
+		day = currDay.getDay();
 	}
 	
 	switch (day) {
@@ -165,12 +166,12 @@ app.post('/', function(request, response) {
 		{
 			for(var i = 0; i < data.length; i++)
 			{
-				if(data[i].date.startsWith(date))
+				if(data[i].date.toLowerCase().startsWith(date.toLowerCase()))
 				{
 					if(meal == 'breakfast')
-						value = "We are having "+ data[i].menu.breakfast[0] +" on " + date + ".";
+						value = "We are having "+ data[i].menu.breakfast.join(", ") +" on " + date + ".";
 					else if(meal == 'lunch')
-						value = "We are having "+ data[i].menu.lunch[0] +" on " + date + ".";
+						value = "We are having "+ data[i].menu.lunch.join(", ") +" on " + date + ".";
 				}
 			}
 		}
