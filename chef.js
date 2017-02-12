@@ -186,7 +186,7 @@ app.post('/', function(request, response) {
 		response.send(apiResponse);
 	};
 	
-	requester({method: 'GET', uri: 'http://localhost:5000/json', json: true},function (error, res, body) {
+	requester({method: 'GET', uri: 'http://rakuten-chef.herokuapp.com/json', json: true},function (error, res, body) {
 		if (!error && res.statusCode == 200) {
 			myCallback(body);
 		}
